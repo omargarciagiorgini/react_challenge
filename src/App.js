@@ -3,8 +3,8 @@ import logo from './logo.svg';
 //import './App.css';
 import './css/estilo.css';
 
-//import Top from './componentes/Top'
-import Footer from './componentes/Footer'
+import Top from './componentes/Top'
+//import Footer from './componentes/Footer'
 import Contenido from './componentes/Contenido'
 
 class App extends Component {
@@ -27,20 +27,11 @@ class App extends Component {
 
   render() {
     return (
+
       <div className='container'>
-      <div className='row'>
-            <div className='col-md-auto' id='top'>
-            <img src={'http://localhost/avalith/challenge/src/images/avalith.png'} height="35" width="39"
-            onClick={this.Toggle.bind(this)} />
-            </div>
-      </div>
+                    <Top ToggleSideBar={this.Toggle.bind(this)}/>
                   <Contenido muestraSideBar={this.state.muestraSideBar}/>
-      <div className='row'>
-            <div className='col-md-auto' id='footer'>
-                    <Footer/>
-            </div>
       </div>
-</div>
     );
   }
 }

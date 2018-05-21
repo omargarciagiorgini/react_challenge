@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
 export default class Top extends Component {
-  Hacealgo(){
-      console.log('hiciste click');
-      alert('vamos carajo !!!');
+  Cambia(event){
+        this.props.ToggleSideBar(event);
   }
   render() {
     return (
 
-          <img src={'http://localhost/avalith/challenge/src/images/avalith.png'} height="35" width="39"
-          onClick={this.Hacealgo} />
-
+          <div className='row'>
+                <div className='col-md-auto' id='top'>
+                    <img src={'http://localhost/avalith/challenge/src/images/avalith.png'} height="35" width="39"
+                          onClick={this.Cambia.bind(this)} />
+                </div>
+          </div>
     );
   }
 }

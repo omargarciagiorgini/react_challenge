@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from './Card';
 
 export default class Tablero extends Component {
   constructor(props) {
@@ -10,19 +11,18 @@ export default class Tablero extends Component {
   verdetalles(event){
     var detalles = this.state;
     this.setState({ detalles:true });
-    console.log('detalles',detalles);
-    return detalles;
+    //console.log('detalles',detalles);
+
   }
   volver(event){
     var detalles = this.state;
     this.setState({ detalles:false });
-    console.log('detalles',detalles);
+    //console.log('detalles',detalles);
   }
   render() {
-    	//var datosTarjeta = this.props.datosTarjeta;
-	 			var datosFiltrados = this.props.datosTarjeta;
+    		var datosFiltrados = this.props.datosTarjeta;
         var detalles = this.state.detalles;
-        console.log('detalles en el render',detalles);
+      //  console.log('detalles en el render',detalles);
 
         if(detalles){
           return (
@@ -37,17 +37,9 @@ export default class Tablero extends Component {
 						{
 							datosFiltrados.map(function(element){
 							return (
-
-                <div className="card"   >
-                      <img className="card-img-top"
-                      src={'http://localhost/avalith/challenge/src/'+element.cardImageUrl} alt="Card image"
-                       height="350" width="390"/>
-                      <div className="card-body">
-                          <p className="card-text">{element.cardDescription}</p>
-                        {/*  <button className='btn' onClick={this.verdetalles.bind(this)} > Detalles</button>
-                          */}
-                      </div>
-              </div>
+                <Card      cardImageUrl={element.cardImageUrl}
+                           cardDescription={element.cardDescription}
+                      />
 
 									);
 								})
