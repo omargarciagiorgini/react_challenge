@@ -7,13 +7,13 @@ export default class Tablero extends Component {
           detalles:false
         };
     }
-  verdetalles(){
+  verdetalles(event){
     var detalles = this.state;
     this.setState({ detalles:true });
     console.log('detalles',detalles);
-
+    return detalles;
   }
-  volver(){
+  volver(event){
     var detalles = this.state;
     this.setState({ detalles:false });
     console.log('detalles',detalles);
@@ -44,7 +44,7 @@ export default class Tablero extends Component {
                        height="350" width="390"/>
                       <div className="card-body">
                           <p className="card-text">{element.cardDescription}</p>
-                          {/*<button className='btn' onClick={this.verdetalles.bind(this)} > Detalles</button>
+                        {/*  <button className='btn' onClick={this.verdetalles.bind(this)} > Detalles</button>
                           */}
                       </div>
               </div>

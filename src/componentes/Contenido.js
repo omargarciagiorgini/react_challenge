@@ -24,8 +24,10 @@ export default class Contenido extends Component
                         const cartas_a_mostrar = res.data;
                         this.setState({ cards });
                         this.setState({ cartas_a_mostrar });
+
                          }
                        );
+
 
 
   		           }
@@ -40,30 +42,43 @@ export default class Contenido extends Component
       this.setState({cartas_a_mostrar});
         }
 
-    ToggleFrontFilter(){
-            var { FrontFilter } = this.state;
-            this.setState({
-                FrontFilter: !FrontFilter,
-                });
-            console.log({FrontFilter});
-      /*      if(FrontFilter){
-              var cartas = this.state.cards;
-              var cartas_a_mostrar = cartas.filter(function(item){
-                    return item.cardTechnology.toLowerCase().search('frontend') !== -1;
-                          }
-                      );
+    ToggleFrontFilter(event){
+
+
+      var cartas = this.state.cards;
+      var cartas_a_mostrar = cartas.filter(function(item){
+            return item.cardTechnology.find(function(element) {
+              return element == "Frontend";
+                          });
+                  }
+                );
+
+
+              console.log('cartas_a_mostrar',cartas_a_mostrar);
+
+              cartas_a_mostrar.sort();
+
+              this.setState({cartas_a_mostrar});
+
+
+        }
+
+    ToggleBackFilter(event){
+
+
+      var cartas = this.state.cards;
+      var cartas_a_mostrar = cartas.filter(function(item){
+            return item.cardTechnology.find(function(element) {
+              return element == "Backend";
+                          });
+                  }
+                );
+
+
               console.log('cartas_a_mostrar',cartas_a_mostrar);
               this.setState({cartas_a_mostrar});
 
-            }
-        */}
 
-    ToggleBackFilter(){
-            var { BackFilter } = this.state;
-            this.setState({
-                BackFilter: !BackFilter,
-                });
-            console.log({BackFilter});
         }
 
 		render()
