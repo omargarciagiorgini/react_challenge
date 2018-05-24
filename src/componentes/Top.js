@@ -8,10 +8,10 @@ export default class Top extends Component {
     return (
 
           <div className='row'>
-                <div className='col-md-auto' id='top'>
+                <nav className='col-md-12 navbar navbar-dark bg-dark' >
                     <img src={'http://localhost/avalith/challenge/src/images/avalith.png'} height="35" width="39"
                           onClick={this.Cambia.bind(this)} />
-                </div>
+                </nav>
           </div>
     );
   }

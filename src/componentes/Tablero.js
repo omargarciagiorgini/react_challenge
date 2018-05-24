@@ -1,51 +1,47 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import CardDetails from './CardDetails';
+import ContenedorCartas from './ContenedorCartas';
 
 export default class Tablero extends Component {
   constructor(props) {
         super(props);
         this.state={
-          detalles:false
+          detalles:false,
+          IdCarta:0
         };
+        this.verdetalles=this.verdetalles.bind(this);
+        this.volver=this.volver.bind(this);
     }
-  verdetalles(event){
-    var detalles = this.state;
-    this.setState({ detalles:true });
-    //console.log('detalles',detalles);
+  verdetalles(id){
+    var detalles = this.state.detalles;
+    var IdCarta = this.state.IdCarta;
+    this.setState({ detalles:true , IdCarta:id });
+  //  console.log('id carta: ',IdCarta);
 
   }
   volver(event){
-    var detalles = this.state;
+    var detalles = this.state.detalles;
     this.setState({ detalles:false });
-    //console.log('detalles',detalles);
   }
   render() {
     		var datosFiltrados = this.props.datosTarjeta;
-        var detalles = this.state.detalles;
-      //  console.log('detalles en el render',detalles);
-
-        if(detalles){
+        //var detalles = this.state.detalles;
+        if(this.state.detalles){
           return (
-            <div id='tablero' className='col'>
-                    <button className='btn' onClick={this.volver.bind(this)} >Back</button>
-                        <h2>ESTOS SON LOS DETALLES</h2>
-            </div>
+                <CardDetails
+                      btnBack={this.volver.bind(this)}
+                      IdCarta={this.state.IdCarta}
+                      datos={datosFiltrados}
+
+                       />
           )
         }else{
 	 		 	return (
-	 		 		<div id='tablero' className='col'>
-						{
-							datosFiltrados.map(function(element){
-							return (
-                <Card      cardImageUrl={element.cardImageUrl}
-                           cardDescription={element.cardDescription}
-                      />
-
-									);
-								})
-              }
-					</div>
-
+                <ContenedorCartas
+                      detalleCarta={this.verdetalles}
+                      datos={datosFiltrados}
+                />
 					);
         }
 

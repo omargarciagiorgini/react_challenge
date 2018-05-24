@@ -2,6 +2,7 @@ import React, { Component , PropTypes} from 'react';
 import axios from 'axios';
 import Tablero from './Tablero'
 import SideBar from './SideBar'
+import Card from './Card'
 
 export default class Contenido extends Component
   {
@@ -17,7 +18,7 @@ export default class Contenido extends Component
   		}
 	 	 componentDidMount() {
       		axios
-        		.get('http://localhost/avalith/challenge/src/componentes/cards.json')
+        		.get('http://localhost/avalith/challenge/src/data/cards.json')
         		.then(res => {
                         const cards = res.data;
                         const cartas_a_mostrar = res.data;
@@ -45,8 +46,8 @@ export default class Contenido extends Component
                           });
                   }
                 );
-              console.log('cartas_a_mostrar',cartas_a_mostrar);
-              cartas_a_mostrar.sort();
+          //    console.log('cartas_a_mostrar',cartas_a_mostrar);
+            //  cartas_a_mostrar.sort();
               this.setState({cartas_a_mostrar});
         }
 
@@ -58,7 +59,7 @@ export default class Contenido extends Component
                           });
                   }
                 );
-              console.log('cartas_a_mostrar',cartas_a_mostrar);
+              //console.log('cartas_a_mostrar',cartas_a_mostrar);
               this.setState({cartas_a_mostrar});
         }
 		render()
