@@ -1,4 +1,4 @@
-import React, { Component , PropTypes} from 'react';
+import React, { Component } from 'react';
 import {Doughnut} from 'react-chartjs-2';
 export default class CardDetails extends Component
   {
@@ -14,14 +14,11 @@ export default class CardDetails extends Component
     render()
 		 {        var cartas = this.props.datos;
               var id_carta = this.props.IdCarta;
-          //  console.log('cartas ',cartas);
-          //  console.log('cartas ',id_carta);
-            var detallesCarta = cartas.find((element)=> {
-                    return element.cardId == id_carta;
+              var detallesCarta = cartas.find((element)=> {
+                    return element.cardId === id_carta;
                        }
              );
-          //   console.log('detallesCarta ',detallesCarta);
-   return(
+       return(
             <div id='tablero' className='col'>
              <button className='btn' onClick={this.btnVolver} >Back</button>
             {/*<Doughnut ref='chart' data={[34,43,24,12]} /> */}

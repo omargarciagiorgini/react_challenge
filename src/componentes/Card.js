@@ -1,15 +1,8 @@
-import React, { Component , PropTypes} from 'react';
+import React, { Component } from 'react';
 
 export default class Card extends Component
   {
-    constructor(props) {
-          super(props);
-          //  this.detalles=this.detalles.bind(this);
-  		}
-
-  detalles(x){
-      //console.log(x);
-      //console.log('id carta:',x);
+    detalles(x){
       this.props.detalleCarta(x);
       }
 
@@ -20,7 +13,7 @@ export default class Card extends Component
      <div className="col-md-12" >
 
       <div className="card"  onClick={() => { this.detalles(this.props.cardId)}} id={this.props.cardId}>
-          <img className="card-header" 
+          <img className="card-header"
             src={'http://localhost/avalith/challenge/src/'+this.props.cardImageUrl} alt="Card image"
                           height="350" width="390"/>
                          <div className="card-body">

@@ -1,9 +1,7 @@
-import React, { Component , PropTypes} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import Tablero from './Tablero'
 import SideBar from './SideBar'
-import Card from './Card'
-
 export default class Contenido extends Component
   {
     constructor(props) {
@@ -24,7 +22,6 @@ export default class Contenido extends Component
                         const cartas_a_mostrar = res.data;
                         this.setState({ cards });
                         this.setState({ cartas_a_mostrar });
-
                          }
                        );
   		           }
@@ -42,12 +39,15 @@ export default class Contenido extends Component
           var cartas = this.state.cards;
           var cartas_a_mostrar = cartas.filter(function(item){
           return item.cardTechnology.find(function(element) {
-              return element == "Frontend";
+              return element === "Frontend";
                           });
                   }
                 );
-          //    console.log('cartas_a_mostrar',cartas_a_mostrar);
-            //  cartas_a_mostrar.sort();
+        /*
+        var cartas_a_mostrar = cartas.find((element) =>{
+            return element === "Frontend";
+                        });
+*/
               this.setState({cartas_a_mostrar});
         }
 
@@ -55,19 +55,17 @@ export default class Contenido extends Component
           var cartas = this.state.cards;
           var cartas_a_mostrar = cartas.filter(function(item){
             return item.cardTechnology.find(function(element) {
-              return element == "Backend";
+              return element === "Backend";
                           });
                   }
                 );
-              //console.log('cartas_a_mostrar',cartas_a_mostrar);
               this.setState({cartas_a_mostrar});
         }
 		render()
 		 {
         var cartas_a_mostrar = this.state.cartas_a_mostrar;
-
-   return(
-      <div className='row'>
+        return(
+          <div className='row'>
                   <SideBar
                       filtrar={this.Filtrar.bind(this)}
                       filtrarFront={this.ToggleFrontFilter.bind(this)}

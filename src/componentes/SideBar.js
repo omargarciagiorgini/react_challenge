@@ -1,11 +1,7 @@
-import React, { Component , PropTypes} from 'react';
+import React, { Component } from 'react';
 
 export default class SideBar extends Component
   {
-    constructor(props) {
-          super(props);
-
-  		}
       Filter(event){
               this.props.filtrar(event);
             }
