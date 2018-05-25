@@ -23,18 +23,17 @@ export default class CardDetails extends Component
              <button className='btn' onClick={this.btnVolver} >Back</button>
             {/*<Doughnut ref='chart' data={[34,43,24,12]} /> */}
             <div className="element" >
-            <div className="col-md-12" >
 
-             <div className="card"   id={detallesCarta.cardId}>
-                 <img className="card-header"
+                  <div className="card col-md-12 details"   id={detallesCarta.cardId}>
+                   <img className="card-header img-thumbnail"
                    src={'http://localhost/avalith/challenge/src/'+detallesCarta.cardImageUrl} alt="Card image"
                                  height="350" width="390"/>
                                 <div className="card-body">
                                    <h3 className="card-title"> {detallesCarta.cardTitle}</h3>
                                     <p className="card-text">{detallesCarta.cardDescription}</p>
                                 </div>
-                        </div>
-               </div>
+                  </div>
+
              </div>
             </div>
           )

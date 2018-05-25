@@ -12,10 +12,11 @@ export default class ContenedorCartas extends Component {
   render() {
     		var datosFiltrados = this.props.datos;
 	 		 	return (
+
 	 		 		<div id='tablero' className='col'>
-            <div className='LANGUAGES-TECHNOLOGIES'>LANGUAGES & TECHNOLOGIES</div>
-						{
-              datosFiltrados.map((element)=>{
+
+              <div className='LANGUAGES-TECHNOLOGIES'>LANGUAGES & TECHNOLOGIES </div>
+            {  datosFiltrados.map((element)=>{
 							return (
                 <Card      cardImageUrl={element.cardImageUrl}
                            cardDescription={element.cardDescription}
@@ -28,6 +29,7 @@ export default class ContenedorCartas extends Component {
 								})
               }
 					</div>
+
 					);
         }
 }
