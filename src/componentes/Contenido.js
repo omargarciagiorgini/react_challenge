@@ -65,7 +65,7 @@ export default class Contenido extends Component
 		 {
         var cartas_a_mostrar = this.state.cartas_a_mostrar;
         return(
-          <div className='row'>
+          <div className='row' >
                   <SideBar
                       filtrar={this.Filtrar.bind(this)}
                       filtrarFront={this.ToggleFrontFilter.bind(this)}

@@ -13,9 +13,10 @@ export default class ContenedorCartas extends Component {
     		var datosFiltrados = this.props.datos;
 	 		 	return (
 
-	 		 		<div id='tablero' className='col'>
+	 		 		<div id='tablero' className='col-md-9'>
 
               <div className='LANGUAGES-TECHNOLOGIES'>LANGUAGES & TECHNOLOGIES </div>
+              <div className='d-flex  p-3 flex-wrap flex-row bg-light container-fluid bg-success'>
             {  datosFiltrados.map((element)=>{
 							return (
                 <Card      cardImageUrl={element.cardImageUrl}
@@ -24,10 +25,12 @@ export default class ContenedorCartas extends Component {
                            cardId={element.cardId}
 
                            detalleCarta={this.details}
-                      />
+                />
 								      );
 								})
               }
+              </div>
+
 					</div>
 
 					);

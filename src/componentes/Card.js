@@ -9,9 +9,8 @@ export default class Card extends Component
     render()
 		 {
    return(
-     <div className="element" >
-     <div className="col-md-12" >
-
+     <div className="p-2 border" >
+ <div className="element" >
       <div className="card"  onClick={() => { this.detalles(this.props.cardId)}} id={this.props.cardId}>
           <img className="card-header img-thumbnail"
             src={'http://localhost/avalith/challenge/src/'+this.props.cardImageUrl} alt="Card image"
@@ -21,7 +20,8 @@ export default class Card extends Component
                              <p className="card-text">{this.props.cardDescription}</p>
                          </div>
                  </div>
-        </div>
+
+      </div>
       </div>
                )
       };
