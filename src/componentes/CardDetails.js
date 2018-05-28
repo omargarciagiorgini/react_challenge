@@ -39,18 +39,19 @@ export default class CardDetails extends Component
 
       {/* <div className="element" > */}
 
-        <div className="card col-md-12 details"   id={detallesCarta.cardId}>
+        <div className="col detallesCarta"   id={detallesCarta.cardId}>
               <button className='btn' onClick={this.btnVolver} >Back</button>
-                   <img className="card-header img-thumbnail"
-                   src={'http://localhost/avalith/challenge/src/'+detallesCarta.cardImageUrl} alt="Card image"
-                                 height="350" width="390"/>
-
-                                <div className="card-body">
-                                   <h3 className="card-title"> {detallesCarta.cardTitle}</h3>
-                                    <p className="card-text">{detallesCarta.cardDescription}</p>
+                   <img className="card-header "
+                   src={'http://localhost/avalith/challenge/src/'+detallesCarta.cardPost.postImageUrl} alt="Card image"
+                                 />
+                                <h3> {detallesCarta.cardPost.postTitle} </h3>
+                                <div className="row">
+                                   <div className="col-md-7"> {detallesCarta.cardPost.postDescription}</div>
+                                    <div className="col-md-5">
+                                               <Pie ref='chart' data={this.state.data} />
+                                    </div>
                                 </div>
-                      <div className='pie'>  <Pie ref='chart' data={this.state.data} />  </div>
-        </div>
+                      </div>
 
 
           {/*   </div> */}

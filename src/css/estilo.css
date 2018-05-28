@@ -13,6 +13,9 @@ label > input{ /* HIDE RADIO */
 .hide-true  {
             display: none;
           }
+.detallesCarta{
+  background-color: white;
+}
 #top{
   width: 100%;
   min-height: 60px;
