@@ -1,7 +1,15 @@
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
 .container{
   background-color: black;
 }
-
+.pie{
+  max-width: 95%;
+  max-height: 95%;
+  float: right;
+}
 .hide-true  {
             display: none;
           }
@@ -125,6 +133,7 @@
   color: var(--black-two);
 }
 .Frontend {
+  float: right;
   width: 70px;
   height: 14px;
   font-family: Roboto;
@@ -138,6 +147,7 @@
   color: #f8f8f8;
 }
 .Backend {
+  float: right;
   width: 67px;
   height: 14px;
   font-family: Roboto;
@@ -151,7 +161,7 @@
   color: #f8f8f8;
 }
 .Filter-by {
-  width: 63px;
+  width: 80%;
   height: 18px;
   font-family: Roboto;
   font-size: 18px;

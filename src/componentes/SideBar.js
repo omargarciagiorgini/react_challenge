@@ -15,22 +15,23 @@ export default class SideBar extends Component
               this.props.filtrar(event);
             }
 
-      FrontFilter(event){
+      clickOnRadio(event){
         var icono_1=this.state.icono_1;
-          this.setState({
-                selectedOption: event.target.value,
-                icono_1:!icono_1
-                });
-              this.props.filtrarFront(event);
+        var icono_2=this.state.icono_2;
+        this.state={
+            selectedOption: event.target.value
+                    }
+        event.target.value === 'Frontend'? this.setState({ icono_1:true ,icono_2:false}):this.setState({ icono_1:false,icono_2:true  });
+      }
+
+      FrontFilter(event){
+        this.clickOnRadio(event);
+        this.props.filtrarFront(event);
           }
 
       BackFilter(event){
-        var icono_2=this.state.icono_2;
-        this.setState({
-              selectedOption: event.target.value,
-              icono_2:!icono_2
-              });
-              this.props.filtrarBack(event);
+        this.clickOnRadio(event);
+        this.props.filtrarBack(event);
           }
 
     render()
@@ -55,7 +56,7 @@ export default class SideBar extends Component
                         <label className="form-check-label">
                             <input type="radio" className="form-check-input" value="Frontend"
                              checked={this.state.selectedOption === 'Frontend'} onClick={this.FrontFilter.bind(this)} />
-                              <img src={'http://localhost/avalith/challenge/src/images/'+this.state.icono_1+'.png'} />
+                              <img src={'http://localhost/avalith/challenge/src/images/'+this.state.icono_1+'.png'}  height="42" width="42" />
                           <div className='Frontend'>Frontend</div>
 
                         </label>
@@ -64,11 +65,10 @@ export default class SideBar extends Component
                         <label className="form-check-label">
                             <input type="radio" className="form-check-input" value="Backend"
                              checked={this.state.selectedOption === 'Backend'} onClick={this.BackFilter.bind(this)}  />
-                             <img src={'http://localhost/avalith/challenge/src/images/'+this.state.icono_2+'.png'} />
+                             <img src={'http://localhost/avalith/challenge/src/images/'+this.state.icono_2+'.png'} height="42" width="42" />
                             <div className='Backend'>Backend</div>
                       </label>
                 </div>
-
 
   			    </div>
             </div>

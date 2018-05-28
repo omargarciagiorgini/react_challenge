@@ -43,11 +43,7 @@ export default class Contenido extends Component
                           });
                   }
                 );
-        /*
-        var cartas_a_mostrar = cartas.find((element) =>{
-            return element === "Frontend";
-                        });
-*/
+
               this.setState({cartas_a_mostrar});
         }
 
