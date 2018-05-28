@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-//import { RadioGroup, RadioButton ,ReversedRadioButton} from 'react-radio-buttons';
-
 export default class SideBar extends Component
   {
     constructor(props){
@@ -20,9 +18,9 @@ export default class SideBar extends Component
 
         var icono_1=this.state.icono_1;
         var icono_2=this.state.icono_2;
-        this.state={
+        this.setState({
             selectedOption: event.target.value
-                    }
+          })
         event.target.value === 'Frontend'? this.setState({ icono_1:true ,icono_2:false}):this.setState({ icono_1:false,icono_2:true  });
 
         this.props.filtrarFront(event);

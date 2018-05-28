@@ -12,7 +12,10 @@ export default class Contenido extends Component
             BackFilter:false,
             FrontFilter:false,
             ver:true,
-            divFiltros:true
+            divFiltros:true,
+            filtrarPorBusqueda:'',
+            filtrarPor:'',
+
           };
   		}
 	 	 componentDidMount() {
@@ -27,21 +30,19 @@ export default class Contenido extends Component
                        );
   		           }
     Filtrar(event){
-            var cartas = this.state.cards;
+            /*var cartas = this.state.cards;
             var cartas_a_mostrar = cartas.filter((item)=>{
                 return item.cardTitle.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
-                /*return item.cardTitle.find(function(x) {
-                                    return (x.toLowerCase() == (event.target.value.toLowerCase()))
-                                  });
-                    */
-                  //return item.cardTitle.toLowerCase() == event.target.value.toLowerCase();
                   }
               );
             this.setState({cartas_a_mostrar});
+            */
+            this.setState({filtrarPorBusqueda:event.target.value})
         }
 
     ToggleFrontFilter(event){
-
+      this.setState({filtrarPor:event.target.value})
+/*
           var cartas = this.state.cards;
           var cartas_a_mostrar = cartas.filter(function(item){
           return item.cardTechnology.find(function(element) {
@@ -51,7 +52,7 @@ export default class Contenido extends Component
                 );
 
               this.setState({cartas_a_mostrar});
-          }
+  */        }
 
 		render()
 		 {
@@ -67,7 +68,10 @@ export default class Contenido extends Component
                       nameDev='Omar Garcia Giorgini' age='37' dni='28804659'
                       divFiltros={this.state.divFiltros}
                       />
-  			 			    <Tablero  datosTarjeta={cartas_a_mostrar}/>
+  			 			    <Tablero  datosTarjeta={cartas_a_mostrar}
+                            filtrarPorBusqueda={this.state.filtrarPorBusqueda}
+                            filtrarPor={this.state.filtrarPor}
+                  />
     </div>
 		 	);
 

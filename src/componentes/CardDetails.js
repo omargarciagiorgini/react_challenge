@@ -5,11 +5,9 @@ export default class CardDetails extends Component
     constructor(props) {
           super(props);
           this.btnVolver=this.btnVolver.bind(this);
-    		}
-
+      }
   btnVolver(event){
-
-    this.props.btnBack(event);
+          this.props.btnBack(event);
   }
     render()
 		 {        var cartas = this.props.datos;
@@ -18,8 +16,7 @@ export default class CardDetails extends Component
                     return element.cardId === id_carta;
                        }
              );
-
-             this.state=({ data:
+             this.state={ data:
                                 {
                                   datasets:[{
                                           backgroundColor: [
@@ -32,14 +29,11 @@ export default class CardDetails extends Component
                                           }],
                                   options:[{responsive:true}]
                                 }
-                             });
-
+                             };
        return(
     <div id='tablero' className='col'>
 
-      {/* <div className="element" > */}
-
-        <div className="col detallesCarta"   id={detallesCarta.cardId}>
+          <div className="col detallesCarta"   id={detallesCarta.cardId}>
               <button className='btn' onClick={this.btnVolver} >Back</button>
                    <img className="card-header "
                    src={'http://localhost/avalith/challenge/src/'+detallesCarta.cardPost.postImageUrl} alt="Card image"
@@ -52,10 +46,7 @@ export default class CardDetails extends Component
                                     </div>
                                 </div>
                       </div>
-
-
-          {/*   </div> */}
-            </div>
+          </div>
           )
       };
 		}

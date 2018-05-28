@@ -33,6 +33,8 @@ export default class Tablero extends Component {
                 <ContenedorCartas
                       detalleCarta={this.verdetalles}
                       datos={datosFiltrados}
+                      filtrarPorBusqueda={this.props.filtrarPorBusqueda}
+                      filtrarPor={this.props.filtrarPor}
                 />
 					);
         }
