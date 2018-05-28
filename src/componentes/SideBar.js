@@ -13,25 +13,19 @@ export default class SideBar extends Component
     }
       Filter(event){
               this.props.filtrar(event);
+              //this.props.filtrarFront(event);
             }
 
-      clickOnRadio(event){
+      FrontFilter(event){
+
         var icono_1=this.state.icono_1;
         var icono_2=this.state.icono_2;
         this.state={
             selectedOption: event.target.value
                     }
         event.target.value === 'Frontend'? this.setState({ icono_1:true ,icono_2:false}):this.setState({ icono_1:false,icono_2:true  });
-      }
 
-      FrontFilter(event){
-        this.clickOnRadio(event);
         this.props.filtrarFront(event);
-          }
-
-      BackFilter(event){
-        this.clickOnRadio(event);
-        this.props.filtrarBack(event);
           }
 
     render()
@@ -46,7 +40,7 @@ export default class SideBar extends Component
                   <label className='DNI-XXXXXXXX'>{this.props.dni}</label><br/>
                   <label className='XX-YEARS-OLD'>{this.props.age +' years old'}</label>
            </p>
-
+{/*<div className='divFiltros' style='visibility:'{this.props.divFiltros}> */}
                 <input type="text" className="form-control Shape-1 "  value={this.props.search} onChange={this.Filter.bind(this)}
                         placeholder='Search in cards' />
 
@@ -64,12 +58,12 @@ export default class SideBar extends Component
                 <div className="form-check">
                         <label className="form-check-label">
                             <input type="radio" className="form-check-input" value="Backend"
-                             checked={this.state.selectedOption === 'Backend'} onClick={this.BackFilter.bind(this)}  />
+                             checked={this.state.selectedOption === 'Backend'} onClick={this.FrontFilter.bind(this)}  />
                              <img src={'http://localhost/avalith/challenge/src/images/'+this.state.icono_2+'.png'} height="42" width="42" />
                             <div className='Backend'>Backend</div>
                       </label>
                 </div>
-
+{/*</div> */}
   			    </div>
             </div>
 		 	);
